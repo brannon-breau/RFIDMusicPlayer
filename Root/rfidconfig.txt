@@ -1,0 +1,35 @@
+[19,131,196,242,166]
+Description: Skips to the next song.
+FileUrlFunction: pt_step 1
+ActionType: Function
+TagType: FOB_1
+
+[35,122,196,242,111]
+Description: Skips back to the previous song.
+FileUrlFunction: pt_step -1
+ActionType: Function
+TagType: FOB_2
+
+[227,105,197,242,189]
+Description: Pause or play Music.
+FileUrlFunction: pause
+ActionType: Function
+TagType: FOB_3
+
+[99,104,197,242,60]
+Description: Shutdown the system
+FileUrlFunction: echo "System is shutting down." | festival --tts && sudo shutdown -h now
+ActionType: OS
+TagType: FOB_4
+
+[67,245,196,242,128]
+Description: Please the All Music plylist
+FileUrlFunction: /media/exfat/Playlists/All.pls
+ActionType: Playlist
+TagType: Tag_1
+
+[3,134,196,242,179]
+Description: 60's Music Decade playlist
+FileUrlFunction: /media/exfat/Playlists/60music.pls
+ActionType: Playlist
+TagType: Tag_2

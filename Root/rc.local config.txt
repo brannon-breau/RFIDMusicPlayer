@@ -1,0 +1,14 @@
+# Mount USB
+sudo mount -t exfat /dev/sda1 /media/exfat
+
+# Create named pipe for mplayer
+mkfifo /tmp/mplayer-control
+
+# Start mplayer in slave mode
+mplayer -slave -input file=/tmp/mplayer-control -idle &
+
+# Start Python RFID-reader-mplayer-control script
+/home/pi/MFRC522-python/rfidmp3player.py &
+
+# Start up Speach
+echo "Shall we play a Game?" | festival --tts
